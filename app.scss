@@ -1,0 +1,429 @@
+// Import global Material Theming variables
+@import "my-theme";
+
+// Imports the Styles for each Material Component
+@import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/select/mdc-select";
+@import "@material/list/mdc-list";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/chips/mdc-chips";
+@import '@material/top-app-bar/mdc-top-app-bar';
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/tab/mixins";
+@import "@material/tab-indicator/mixins";
+@import "@material/ripple/mixins";
+@import "@material/card/mdc-card";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mixins";
+@import "@material/drawer/mdc-drawer";
+@import "@material/icon-button/mdc-icon-button";
+
+body {
+  margin: 0;
+  background: mdc-theme-prop-value(background);
+}
+
+.adopt-a-pup-top-navigation {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.mdc-drawer__header {
+    padding: 4px;
+}
+
+
+.drawer-close-icon {
+  text-decoration: none;
+}
+
+.adopt-a-pup-tab {
+  @include mdc-tab-text-label-color(black);
+  @include mdc-tab-icon-color(black);
+  @include mdc-typography(body2);
+  font-style: normal;
+
+  .mdc-tab__ripple {
+    @include mdc-states(gray);
+  }
+}
+
+.adopt-a-pup-tab-indicator {
+  @include mdc-tab-indicator-underline-color(#6B38FB);
+}
+
+.adopt-a-pup-puppers {
+  max-width: 1480px;
+}
+
+.adopt-a-pup-body--hidden {
+  display: none;
+}
+
+$card-text-label-baseline: 16px;
+
+.adopt-a-pup-card .mdc-card__actions {
+  margin-top: auto;
+}
+
+
+
+.adopt-a-pup-card__text-label {
+  margin: 0 16px;
+  @include mdc-typography(headline5);
+  @include mdc-typography-baseline-top(32px);
+//@include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+}
+
+.adopt-a-pup-card__overline {
+  margin: 0 16px;
+  line-height: 1rem !important;
+  @include mdc-typography(overline);
+  text-transform: uppercase;
+  margin-top: 12px;
+//@include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+}
+
+$card-secondary-baseline: 16px;
+
+.adopt-a-pup-card__secondary {
+  margin: 0 16px;
+  @include mdc-typography(body2);
+  @include mdc-typography-baseline-top(24px);
+  @include mdc-typography-baseline-bottom(-$card-secondary-baseline);
+  line-height: 1.3rem !important;
+}
+
+.adopt-a-pup--fixed-adjust {
+  padding-top: 112px;
+}
+
+
+
+.adopt-form {
+  padding: 0 16px 16px;
+  overflow: hidden;
+}
+
+.adopt-form--hidden {
+  visibility: hidden;
+}
+
+.adopt-form__animating-container {
+  //padding: 12px;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform cubic-bezier(.4, 0, .2, 1) 250ms;
+}
+
+.adopt-form__animating-container--animating {
+  transform: translateY(-110%);
+}
+
+.adopt-form__link {
+  color: $mdc-theme-primary;
+}
+
+.adopt-form__input-field {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.mdc-select {
+  @include mdc-select-shape-radius($mdc-shape-small-component-radius);
+}
+
+.mdc-card__actions { 
+  justify-content: flex-end; 
+}
+
+.mdc-typography--caption {
+  @include mdc-typography(caption);
+  @include mdc-typography-baseline-top(24px);
+  @include mdc-typography-baseline-bottom(-$card-text-label-baseline);
+}
+
+.mdc-button {
+  font-style: normal;
+  @include mdc-button-container-fill-color(#6B38FB);
+}
+
+svg {
+  margin-top: 12px;
+}
+
+.mdc-top-app-bar--short .mdc-top-app-bar__section {
+    padding: 4px;
+}
+
+.mdc-top-app-bar {
+  @include mdc-top-app-bar-short-shape-radius(0px);
+
+}
+
+.mdc-top-app-bar.mdc-top-app-bar--short-collapsed {
+    border-radius: 0 0 0px 0;
+
+}
+
+.mdc-top-app-bar__search-icon {
+  right: 0;
+  text-decoration: none;
+}
+
+
+.mdc-drawer .mdc-list-item {
+    font-size: inherit;
+    text-decoration: inherit;
+    text-transform: inherit;
+    @include mdc-typography(subtitle1);
+    font-size: 18px;
+}
+
+.mdc-drawer {
+  @include mdc-drawer-scrim-fill-color(white);
+  @include mdc-drawer-item-activated-text-ink-color(black);
+  @include mdc-drawer-activated-overlay-color(rgba(193, 66, 66, 0));
+  @include mdc-drawer-width(320px);
+}
+
+
+.mdc-list {
+  @include mdc-list-item-primary-text-ink-color(black);
+  @include mdc-list-item-shape-radius(0px);
+}
+
+
+.mdc-list-item--activated {
+  @include mdc-typography(subtitle1);
+  font-weight: 700 !important;
+  color: black !important;
+  
+  
+}
+
+.mdc-top-app-bar__title {
+  padding-left: 8px;
+}
+
+
+
+// article view
+
+.article-page {
+
+  
+  .adopt-a-pup-top-navigation {
+    display: none;
+  }
+  
+  .adopt-a-pup--fixed-adjust {
+      padding-top: 56px; 
+  }
+  
+  .article-image {
+    width: 100%;
+    height: auto;
+    
+    img {
+      width: 100%;
+    }
+  }
+  
+  .article-content {
+    height: auto;
+    padding: 16px;
+  }
+  
+  .article-meta {
+    width: 100%;
+    height: auto;
+  }
+  
+  .article-category {
+    @include mdc-typography(overline);
+    text-transform: uppercase;
+  }
+  
+  .article-title {
+    @include mdc-typography(headline6);
+    letter-spacing: 0;
+  }
+  
+  .article-oneliner {
+    @include mdc-typography(subtitle2);
+    opacity: 0.64;
+    margin-top: 4px;
+  }
+  
+  .article-author {
+    display: inline-block;
+    margin: 16px 0px;
+  }
+  
+  .author-image {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url("https://cdn.glitch.com/62e2261a-7e39-4dae-832f-57566e5fe6b2%2Fstock-photo-barcelona-poblenou-by-michseixas-143329895.jpg?v=1581723642934");
+    background-size: cover;
+  }
+  
+  .author-name {
+    @include mdc-typography(body1);
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: 2px solid #6B38FB;
+
+  }
+  
+  .author-by {
+    display: inline-block;
+    @include mdc-typography(subtitle1);
+    opacity: 0.64;
+    margin: 0px 4px;
+    text-decoration: none;
+    border-bottom: 0px solid #6B38FB;
+    
+    
+  }
+  
+  .article-text {
+    @include mdc-typography(body1);
+    margin-top: 16px;
+    
+    .firstcharacter{
+      @include mdc-typography(headline3);
+      padding-right: 2px;
+    }
+  }
+}
+ 
+
+
+
+@media only screen and (min-width: 600px) {
+  
+  .mdc-tab-bar {
+    max-width: 880px;
+    margin: auto;
+  }
+  
+  
+  
+  
+  
+  
+  .article-page {
+
+  
+  .adopt-a-pup-top-navigation {
+    display: none;
+  }
+  
+  .adopt-a-pup--fixed-adjust {
+      padding-top: 56px; 
+  }
+  
+  .article-image {
+    max-width: 880px;
+    height: auto;
+    margin: auto;
+    
+    img {
+      width: 100%;
+    }
+  }
+  
+  .article-content {
+    height: auto;
+    padding: 0px;
+    
+    margin: auto;
+  }
+  
+  .article-meta {
+    width: 100%;
+    height: auto;
+    max-width: 880px;
+    margin: auto;
+  }
+  
+  .article-category {
+    @include mdc-typography(overline);
+    text-transform: uppercase;
+  }
+  
+  .article-title {
+    @include mdc-typography(headline6);
+    letter-spacing: 0;
+  }
+  
+  .article-oneliner {
+    @include mdc-typography(subtitle2);
+    opacity: 0.64;
+    margin-top: 4px;
+  }
+  
+  .article-author {
+    display: inline-block;
+    margin: 16px 0px;
+  }
+  
+  .author-image {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url("https://cdn.glitch.com/62e2261a-7e39-4dae-832f-57566e5fe6b2%2Fstock-photo-barcelona-poblenou-by-michseixas-143329895.jpg?v=1581723642934");
+    background-size: cover;
+  }
+  
+  .author-name {
+    @include mdc-typography(body1);
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: 2px solid #6B38FB;
+
+  }
+  
+  .author-by {
+    display: inline-block;
+    @include mdc-typography(subtitle1);
+    opacity: 0.64;
+    margin: 0px 4px;
+    text-decoration: none;
+    border-bottom: 0px solid #6B38FB;
+    
+    
+  }
+  
+  .article-text {
+    @include mdc-typography(body1);
+    max-width: 800px;
+    margin: 24px auto;
+    
+    .firstcharacter{
+      @include mdc-typography(headline3);
+      padding-right: 2px;
+    }
+  }
+}  
+   
+ 
+}
+  
+  
+  
+  
